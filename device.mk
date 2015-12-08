@@ -61,6 +61,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
 	device/lge/mako/configs/init.qcom.post_boot.sh:system/bin/init.qcom.post_boot.sh \
+	device/lge/mako/configs/95-postboot.sh:system/addon.d/95-postboot.sh \
 	device/lge/mako/init.mako.rc:root/init.mako.rc \
 	device/lge/mako/init.mako.usb.rc:root/init.mako.usb.rc \
 	device/lge/mako/fstab.mako:root/fstab.mako \
