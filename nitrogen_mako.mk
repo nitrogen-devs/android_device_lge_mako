@@ -14,29 +14,25 @@
 # limitations under the License.
 #
 
-# Sample: This is where we'd set a backup provider if we had one
-# $(call inherit-product, device/sample/products/backup_overlay.mk)
-
-# Live Wallpapers
-PRODUCT_PACKAGES += \
-    LiveWallpapers \
-    LiveWallpapersPicker
-
-# Asserts
-TARGET_OTA_ASSERT_DEVICE := mako
-	
-# Get the long list of APNs
-PRODUCT_COPY_FILES := device/lge/mako/apns-full-conf.xml:system/etc/apns-conf.xml
+# Boot animation
+TARGET_SCREEN_HEIGHT := 1280
+TARGET_SCREEN_WIDTH := 768
 
 # Inherit from the common Open Source product configuration
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-PRODUCT_NAME := full_mako
+# Inherit some common CM stuff.
+$(call inherit-product, vendor/nitrogen/products/common.mk)
+
+# Inherit device configuration
+$(call inherit-product, device/lge/mako/full_mako.mk)
+
+## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := mako
-PRODUCT_BRAND := Android
+PRODUCT_NAME := nitrogen_mako
+PRODUCT_BRAND := LGE
 PRODUCT_MODEL := Nexus 4
 PRODUCT_MANUFACTURER := LGE
+PRODUCT_RESTRICT_VENDOR_FILES := false
 
-# Inherit from hardware-specific part of the product configuration
-$(call inherit-product, device/lge/mako/device.mk)
-$(call inherit-product-if-exists, vendor/lge/mako/mako-vendor.mk)
+PRODUCT_BUILD_PROP_OVERRIDES += BUILD_DISPLAY_ID=nitrogen_mako-marshmallow
