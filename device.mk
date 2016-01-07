@@ -251,6 +251,16 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	power.mako
 
+# OTA package
+PRODUCT_PACKAGES += \
+    OTAUpdates \
+    libbypass
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.ota.romname=Nitrogen-OS \
+    ro.ota.version=$(shell date +"%Y%m%d") \
+    ro.ota.manifest=http://xyyx.ga/nitrogen-os/mako/ota.xml
+
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	rild.libpath=/system/lib/libril-qc-qmi-1.so
 
