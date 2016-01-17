@@ -60,6 +60,7 @@ PRODUCT_COPY_FILES += \
 	device/lge/mako/thermald-mako.conf:system/etc/thermald.conf
 
 PRODUCT_COPY_FILES += \
+	device/lge/mako/initlogo.rle:root/initlogo.rle888 \
 	device/lge/mako/configs/init.qcom.post_boot.sh:system/bin/init.qcom.post_boot.sh \
 	device/lge/mako/configs/95-postboot.sh:system/addon.d/95-postboot.sh \
 	device/lge/mako/init.mako.rc:root/init.mako.rc \
