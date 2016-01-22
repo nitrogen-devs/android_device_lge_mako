@@ -195,9 +195,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
 	hci_qcomm_init
 
-PRODUCT_PACKAGES += \
-	power.msm8960
-
 PRODUCT_COPY_FILES += \
 	device/lge/mako/init.mako.bt.sh:system/etc/init.mako.bt.sh
 
