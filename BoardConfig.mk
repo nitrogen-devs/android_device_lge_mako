@@ -24,6 +24,8 @@ TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_VARIANT := krait
 TARGET_MPDECISION_BOOST_SOCKET := /dev/socket/mpdecision/touchboost
 
+ART_USE_OPTIMIZING_COMPILER := true
+
 TARGET_NO_BOOTLOADER := true
 
 KERNEL_TOOLCHAIN_PREFIX:=$(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.8/bin/arm-eabi-
