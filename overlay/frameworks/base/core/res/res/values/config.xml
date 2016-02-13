@@ -312,4 +312,7 @@
         For example, a device with Home, Back and Menu keys would set this config to 7.
     -->
     <integer name="config_deviceHardwareKeys">64</integer>
+
+    <!-- Hide "Backlight" settings since not supported (timeout controlled by kernel) -->
+    <integer name="config_buttonBrightnessSettingDefault">0</integer>
 </resources>
