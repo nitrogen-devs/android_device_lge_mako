@@ -261,7 +261,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.ota.romname=Nitrogen-OS \
     ro.ota.version=$(shell date +"%Y%m%d") \
-    ro.ota.manifest=http://xyyx.ga/nitrogen-os/mako/ota.xml
+    ro.ota.manifest=http://xyyx-dev.ru/nitrogen-os/mako/ota.xml
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	rild.libpath=/system/lib/libril-qc-qmi-1.so
