@@ -2,40 +2,33 @@
 
 # CPU HOTPLUG
     # Disable mpdecision
-#    stop mpdecision
-    #echo 0 > /sys/module/msm_mpdecision/enabled
+    stop mpdecision
+    echo 0 > /sys/module/msm_mpdecision/enabled
 
     # Configure MPDEC
-#    echo 0 > /sys/kernel/msm_mpdecision/conf/boost_enabled
+    echo 0 > /sys/kernel/msm_mpdecision/conf/boost_enabled
 
-# GPU
-#    # Set max gpu freq to 320 mhz (disable by default)
-#    echo 320000000 > /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/max_gpuclk
-	
 # GOVERNOR
-    echo 1 > /sys/devices/system/cpu/cpu0/online
     echo 1 > /sys/devices/system/cpu/cpu1/online
     echo 1 > /sys/devices/system/cpu/cpu2/online
     echo 1 > /sys/devices/system/cpu/cpu3/online
-    echo "interactive" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-    echo "interactive" > /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
-    echo "interactive" > /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor
-    echo "interactive" > /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor
-#    echo 162000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
-#    echo 162000 > /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq
-#    echo 162000 > /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq
-#    echo 162000 > /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq
-#    echo 918000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
-#    echo 918000 > /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq
-#    echo 918000 > /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
-#    echo 918000 > /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq
+    echo "ondemand" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+    echo "ondemand" > /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
+    echo "ondemand" > /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor
+    echo "ondemand" > /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor
+    echo 90 > /sys/devices/system/cpu/cpufreq/ondemand/up_threshold
+    echo 50000 > /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate
+    echo 1 > /sys/devices/system/cpu/cpufreq/ondemand/io_is_busy
+    echo 4 > /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor
+    echo 384000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+    echo 384000 > /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq
+    echo 384000 > /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq
+    echo 384000 > /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq
+    echo 1512000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+    echo 1512000 > /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq
+    echo 1512000 > /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
+    echo 1512000 > /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq
 
-# UNDERVOLT
-    #echo '-50000' > /sys/devices/system/cpu/cpu0/cpufreq/UV_mV_table
-    #echo '-50000' > /sys/devices/system/cpu/cpu1/cpufreq/UV_mV_table
-    #echo '-50000' > /sys/devices/system/cpu/cpu2/cpufreq/UV_mV_table
-    #echo '-50000' > /sys/devices/system/cpu/cpu3/cpufreq/UV_mV_table
-    	
 # RPM
     echo 1 > /sys/module/rpm_resources/enable_low_power/L2_cache
     echo 1 > /sys/module/rpm_resources/enable_low_power/pxo
